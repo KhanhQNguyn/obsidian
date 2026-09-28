@@ -2,7 +2,7 @@
 
 ## Professional Profile
 
-I am a software engineering professional in development and an Honours undergraduate at RMIT University Vietnam, with hands-on experience across full-stack web development, backend architecture, real-time systems, AI-assisted applications, and data-driven problem solving.
+I am a software engineering professional in development and an Honours undergraduate at RMIT University Vietnam, with hands-on experience across full-stack web development, backend architecture, real-time systems, AI-assisted applications, and data-driven problem solving. I value social relationship. Therefore, if there's any appointment made and I ask for "WHAT SHOULD I DO TODAY?" Claude should be able to put the appointments that INVOLVES other people on top. The tasks that are about myself can be prioritized lower since when I involve others, it's gonna affect others, not only me.
 
 I approach software engineering primarily as a builder. I enjoy understanding how systems work, translating technical requirements into practical solutions, and turning ideas into functioning products. My experience spans web applications, backend services, real-time multiplayer systems, accessibility tools, AI workflows, enterprise software, and algorithmic problem solving.
 
