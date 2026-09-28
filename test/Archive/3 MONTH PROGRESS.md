@@ -1,0 +1,26 @@
+- **25 July - 1 Aug**
+    - push:
+        - incline db bench: 22kg/ per arm | incline machine db press: 66kg
+        - shoulder press: 20kg/ per arm
+        - pec deck: 90 lbs
+        - lateral raise: 12kg/ per arm
+        - chest fly: 15kg/ per arm
+    - pull:
+        - pull up: 4 home
+        - machine pull over: 30kg
+        - lat pull down: 45kg
+        - t bar row: 20kg
+        - bayesian curl: 10kg
+- **2 Aug - 9 Aug**
+    - push:
+        - incline db bench: 22kg/ per arm | incline machine db press: 66kg
+        - shoulder press: 20kg/ per arm
+        - pec deck: 90 lbs
+        - lateral raise: 12kg/ per arm
+        - chest fly: 15kg/ per arm
+    - pull:
+        - pull up: 4 home
+        - machine pull over: 30kg
+        - lat pull down: 45kg
+        - t bar row: 20kg
+        - bayesian curl: 10kg
