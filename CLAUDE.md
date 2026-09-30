@@ -35,6 +35,7 @@ This is an Obsidian vault (a personal notes/knowledge base), not a software proj
 - `03-Health` — `workout-progress.md` at the root plus one `activity/` folder holding a single `activity-log.md` (all gym/sport days, one dated section each, newest first)
 - `04-Life` — `clubs/`, `photography/`, `games/`
 - `05-Career` — `competitions/` (includes `hackathons/`), `applications-interviews/`, plus top-level notes like `lessons-learned.md`
+- `06-Todo` — `todo-today.md`, `todo-this-week.md`, `todo-this-month.md`: master task lists, grouped by area, each area linking to the notes/folders that hold its tasks
 - `99-Templates` — note templates used by `scripts/vault.mjs`
 - `Archive` — retired notes (never permanently delete)
 - `scripts` — vault tooling (`vault.mjs`)
@@ -62,3 +63,4 @@ Zero-dependency Node script, run from the vault root as `node test/scripts/vault
 - A missing daily note means "no data", never "did nothing".
 - List days with no entry before any review.
 - Don't guess my schedule — ask me.
+- **Tasks need my confirmation first.** When I give tasks or ask you to plan my day/week/month, propose the list in chat and wait for my OK before adding anything to a todo list (`06-Todo/` files or a daily note's Tasks section). Once confirmed, add each task to the matching todo file under its area, and link the area's source notes/folders so tasks stay easy to find.

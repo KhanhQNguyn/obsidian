@@ -27,6 +27,7 @@ const FOLDERS = [
   "04-Life/games",
   "05-Career/competitions/hackathons",
   "05-Career/applications-interviews",
+  "06-Todo",
   "99-Templates",
   "Archive",
   "scripts",

@@ -353,5 +353,6 @@ Dựa trên thông tin đã cho + điều kiện vận hành ở Việt Nam/th�
 ## 10. Research 30/09 (linked notes)
 
 - [[underwriting-process-analysis]] - quy trình thủ công 380,000 VND / 1.8–4.6 ngày, chi phí, tổn thất tiềm năng, build-on-existing vs. new (khuyến nghị hybrid)
+- [[final-solution]] - bản giải pháp đề xuất (PayFlow Line): luồng end-to-end, cách hoạt động, đối chiếu rubric, bằng chứng
 - [[solution-usp-research]] - lỗ hổng của giải pháp hiện tại + các USP đề xuất
 - Nhật ký ngày: [[2026-09-30]]
