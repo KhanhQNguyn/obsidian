@@ -32,9 +32,9 @@ This is an Obsidian vault (a personal notes/knowledge base), not a software proj
 - `00-Inbox` — quick unsorted captures
 - `01-Daily` — daily notes
 - `02-Study` — `theory/`, `java/`, `web/`, `dsa/`, `swe-skills/` (modern SWE skills for internships), `chinese/` (HSK3 goal)
-- `03-Health` — `gym/`, `sports/`, `diet/`
+- `03-Health` — `workout-progress.md` at the root plus one `activity/` folder holding a single `activity-log.md` (all gym/sport days, one dated section each, newest first)
 - `04-Life` — `clubs/`, `photography/`, `games/`
-- `05-Career` — `hackathons/`, `interviews/`, `applications/`, plus top-level notes like `lessons-learned.md`
+- `05-Career` — `competitions/` (includes `hackathons/`), `applications-interviews/`, plus top-level notes like `lessons-learned.md`
 - `99-Templates` — note templates used by `scripts/vault.mjs`
 - `Archive` — retired notes (never permanently delete)
 - `scripts` — vault tooling (`vault.mjs`)
@@ -47,8 +47,8 @@ Zero-dependency Node script, run from the vault root as `node test/scripts/vault
 | `init` | `vault.mjs init` | Creates the full `FOLDERS` structure under `test/` (see script for the list) if missing |
 | `sync` | `vault.mjs sync` | Repairs missing folders only — safe to re-run anytime, never touches notes |
 | `daily` | `vault.mjs daily` | Creates today's `test/01-Daily/YYYY-MM-DD.md` from the `daily` template |
-| `gym` | `vault.mjs gym [title]` | Creates `test/03-Health/gym/YYYY-MM-DD-<slug>.md` from the `gym` template |
-| `sport` | `vault.mjs sport [title]` | Creates `test/03-Health/sports/YYYY-MM-DD-<slug>.md` from the `sport` template |
+| `gym` | `vault.mjs gym [details]` | Adds a Gym line under today's date in `test/03-Health/activity/activity-log.md` |
+| `sport` | `vault.mjs sport [details]` | Adds a Sport line under today's date in `test/03-Health/activity/activity-log.md` |
 | `study` | `vault.mjs study <topic> <title>` | Creates `test/02-Study/<topic>/<slug>.md`; topic must be one of `theory, java, web, dsa, swe-skills, chinese` |
 | `lc` | `vault.mjs lc <id> <title>` | Creates `test/02-Study/dsa/<0000-id>-<slug>.md` from the `lc` template |
 | `save` | `vault.mjs save [message]` | `git add -A` + commit (if changes exist) + `pull --rebase` + `push` |

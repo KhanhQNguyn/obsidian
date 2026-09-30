@@ -21,15 +21,12 @@ const FOLDERS = [
   "02-Study/dsa",
   "02-Study/swe-skills",
   "02-Study/chinese",
-  "03-Health/gym",
-  "03-Health/sports",
-  "03-Health/diet",
+  "03-Health/activity",
   "04-Life/clubs",
   "04-Life/photography",
   "04-Life/games",
-  "05-Career/hackathons",
-  "05-Career/interviews",
-  "05-Career/applications",
+  "05-Career/competitions/hackathons",
+  "05-Career/applications-interviews",
   "99-Templates",
   "Archive",
   "scripts",
@@ -158,30 +155,35 @@ function cmdDaily() {
   writeNote(target, content);
 }
 
-function cmdGym(args) {
-  const title = args.join(" ") || "session";
+// gym and sport both append a dated section to the single activity log.
+function appendActivity(kind, args) {
+  const detail = args.join(" ");
   const date = todayStr();
-  const template = readTemplate("gym");
-  const content = render(template, { date, title });
-  const target = path.join(
-    ROOT,
-    "03-Health/gym",
-    `${date}-${slugify(title)}.md`
-  );
-  writeNote(target, content);
+  const file = path.join(ROOT, "03-Health/activity", "activity-log.md");
+  const entry = `- **${kind}:**${detail ? " " + detail : ""}\n`;
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  let text = fs.existsSync(file)
+    ? fs.readFileSync(file, "utf8")
+    : "---\ntype: activity-log\ntags: [health, activity, gym, sport]\n---\n\n# Activity Log\n\n";
+  const heading = `## ${date}`;
+  if (text.includes(heading)) {
+    text = text.replace(heading + "\n", heading + "\n" + entry);
+  } else {
+    const idx = text.search(/^## /m);
+    const block = `${heading}\n${entry}\n`;
+    text =
+      idx === -1 ? text.trimEnd() + "\n\n" + block : text.slice(0, idx) + block + text.slice(idx);
+  }
+  fs.writeFileSync(file, text, "utf8");
+  console.log(`Logged ${kind} in ${path.relative(ROOT, file)} under ${date}`);
+}
+
+function cmdGym(args) {
+  appendActivity("Gym", args);
 }
 
 function cmdSport(args) {
-  const title = args.join(" ") || "session";
-  const date = todayStr();
-  const template = readTemplate("sport");
-  const content = render(template, { date, title });
-  const target = path.join(
-    ROOT,
-    "03-Health/sports",
-    `${date}-${slugify(title)}.md`
-  );
-  writeNote(target, content);
+  appendActivity("Sport", args);
 }
 
 function cmdStudy(args) {
@@ -234,8 +236,8 @@ function printHelp() {
 Commands:
   init                       Create the folder structure and check templates
   daily                      Create (or open) today's daily note
-  gym [title]                Create a new gym log note for today
-  sport [title]              Create a new sport log note for today
+  gym [details]              Add a gym entry for today to activity-log.md
+  sport [details]            Add a sport entry for today to activity-log.md
   study <topic> <title>      Create a study note (topic: ${STUDY_TOPICS.join(
     ", "
   )})

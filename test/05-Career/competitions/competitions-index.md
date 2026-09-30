@@ -6,7 +6,7 @@ tags: [competition, career]
 
 # Competitions — Index
 
-Tracks all academic/business competitions in progress. One subfolder per competition under `test/05-Career/competitions/`.
+Tracks all academic/business competitions in progress. One subfolder per competition under `test/05-Career/competitions/`; hackathons live in `hackathons/` there.
 
 ## Active
 
