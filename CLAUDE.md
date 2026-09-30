@@ -1,6 +1,10 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
 # Vault rules
 
-This is an Obsidian vault. Follow these rules when creating or editing notes here.
+This is an Obsidian vault (a personal notes/knowledge base), not a software project — there is no build, lint, or test suite. The only tooling is the note-management script below. Follow these rules when creating or editing notes here.
 
 ## Layout
 - This directory is the vault root (`.obsidian/` lives directly inside it).
@@ -36,8 +40,21 @@ This is an Obsidian vault. Follow these rules when creating or editing notes her
 - `scripts` — vault tooling (`vault.mjs`)
 
 ## Tooling
-- Use `node test/scripts/vault.mjs <command>` (or `node scripts/vault.mjs <command>` from inside `test/`) to create notes from templates (`init`, `daily`, `gym`, `sport`, `study`, `lc`, `sync`) and to save (`save`, which runs git add + commit + pull --rebase + push).
-- The script never deletes or overwrites an existing note.
+Zero-dependency Node script, run from the vault root as `node test/scripts/vault.mjs <command>` (or `node scripts/vault.mjs <command>` from inside `test/`):
+
+| Command | Usage | Effect |
+|---|---|---|
+| `init` | `vault.mjs init` | Creates the full `FOLDERS` structure under `test/` (see script for the list) if missing |
+| `sync` | `vault.mjs sync` | Repairs missing folders only — safe to re-run anytime, never touches notes |
+| `daily` | `vault.mjs daily` | Creates today's `test/01-Daily/YYYY-MM-DD.md` from the `daily` template |
+| `gym` | `vault.mjs gym [title]` | Creates `test/03-Health/gym/YYYY-MM-DD-<slug>.md` from the `gym` template |
+| `sport` | `vault.mjs sport [title]` | Creates `test/03-Health/sports/YYYY-MM-DD-<slug>.md` from the `sport` template |
+| `study` | `vault.mjs study <topic> <title>` | Creates `test/02-Study/<topic>/<slug>.md`; topic must be one of `theory, java, web, dsa, swe-skills, chinese` |
+| `lc` | `vault.mjs lc <id> <title>` | Creates `test/02-Study/dsa/<0000-id>-<slug>.md` from the `lc` template |
+| `save` | `vault.mjs save [message]` | `git add -A` + commit (if changes exist) + `pull --rebase` + `push` |
+
+- Templates live in `test/99-Templates/*.md` and use `{{var}}` placeholders (`readTemplate`/`render` in the script).
+- `writeNote` never deletes or overwrites an existing note — a name collision is skipped with a console message, not an error.
 
 ## Claude behavior rules
 - Read `about_me.md` for my biometrics, targets and goals.

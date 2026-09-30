@@ -282,6 +282,31 @@ Dựa trên thông tin đã cho + điều kiện vận hành ở Việt Nam/th�
 - Ngưỡng rủi ro nào chấp nhận được để tự động hóa hoàn toàn vs. cần review thủ công
 - KPI cụ thể: giảm bao nhiêu % thời gian, giảm bao nhiêu VND chi phí/đơn, tăng bao nhiêu % approval rate cho nhóm nào
 
+### 6.1 Pre-meeting research (hoàn thành 29/09, trước cuộc họp 22:00)
+
+**Root-cause synthesis (nối 3 khả nghi thành 1 chuỗi nhân quả, dựa đúng số liệu Exhibit 1 & 2 — mục 4.7–4.8):**
+
+> Root cause: quy trình underwriting hiện tại là **thủ công, tập trung, chỉ dựa vào hồ sơ bureau**. Đây là nguyên nhân gốc, còn chi phí cao (380,000 VND/đơn cố định) và tốc độ chậm (1.8–4.6 ngày) chỉ là **triệu chứng** của cùng một nguyên nhân đó — không phải 3 bottleneck riêng biệt.
+> - Vì thủ công + tập trung → mất nhiều ngày, không thể ra quyết định "trong khoảnh khắc mua hàng"
+> - Vì chi phí cố định mỗi đơn (không co giãn theo quy mô khoản vay) → khoản vay nhỏ nhất (1.6tr) có nguy cơ lỗ ngay cả khi duyệt
+> - Vì chỉ dùng bureau (CIC) → ~44% đơn (gig/platform/first-time/MSME, theo Inbound Mix mục 4.8) bị đánh giá sai dù có dữ liệu thay thế (platform income, ví điện tử, lịch sử bán hàng) đã tồn tại nhưng không được dùng
+
+→ **Đề xuất trình bày trong họp:** chọn **"manual, bureau-only underwriting process"** làm root cause chính để chấm Problem Diagnosis (20%), thay vì liệt kê chi phí/tốc độ/dữ liệu như 3 vấn đề ngang hàng — giám khảo (rubric mục 4.10, dòng 1) yêu cầu "xác định chính xác bottleneck cốt lõi", số ít.
+> ⚠️ Đây vẫn là đề xuất từ góc nhìn Tech Lead dựa trên đúng số liệu case — đội Business cần chốt lại tại cuộc họp, không phải kết luận cuối cùng.
+
+**Technical feasibility — đánh giá sơ bộ từng hướng giải pháp (đối chiếu yêu cầu HLBVN: khả thi vận hành, quản lý rủi ro, giải thích được, 6–12 tháng):**
+
+| Hướng giải pháp | Đánh giá khả thi kỹ thuật | Rủi ro/điều kiện |
+|---|---|---|
+| **Alternative credit scoring** (dùng dữ liệu platform/ví điện tử/lịch sử bán hàng) | Khả thi về mặt kỹ thuật (scorecard/logistic regression trên alt-data là practice phổ biến toàn ngành) | **Phụ thuộc business side**: case không xác nhận HLBVN có thật quyền truy cập / thỏa thuận chia sẻ dữ liệu này với platform/đối tác hay không — đây là giả định phải nêu rõ, không phải fact |
+| **eKYC số hóa** (xác minh danh tính thời gian thực) | Khả thi cao nhất trong ngắn hạn — eKYC (liveness check, đối chiếu CCCD) là công nghệ đã trưởng thành và phổ biến tại ngân hàng VN | Ít phụ thuộc dữ liệu ngoài; chủ yếu là tích hợp vendor/API |
+| **Risk-based auto-approval + human-in-the-loop** (auto-duyệt khoản nhỏ dưới ngưỡng, người duyệt khoản lớn hơn) | Khả thi, đúng mô hình STP đã có sẵn cho nhóm "Salaried có tín dụng" (mục 4.7) — mở rộng logic này cho nhóm khác | Cần mô hình **giải thích được** (không dùng LLM/agent tự quyết cho quyết định tín dụng) để bảo vệ được trước credit committee, đúng thư ngỏ HLBVN (mục 4.2) |
+
+**→ Việc chưa làm được (phụ thuộc thông tin phía Business/BTC, không tự kết luận được):**
+- Chưa biết dữ liệu thay thế nào **thực sự truy cập được** — cần đội Business xác nhận hoặc cần hỏi BTC/HLBVN có dataset mô phỏng thật không (đã liệt kê ở mục 8)
+- Chưa có ngưỡng rủi ro cụ thể (bao nhiêu VND, hồ sơ nào tự động duyệt) — cần đội Business quyết định hướng kinh doanh trước
+- Chưa có KPI mục tiêu cụ thể (giảm % chi phí, giảm % thời gian, tăng % approval rate) — cần chốt cùng đội Business tại cuộc họp
+
 ## 7. Việc cần làm ngay (để Claude Code lên plan hằng ngày)
 
 1. **[Ưu tiên cao nhất]** Đội Business làm Problem Diagnosis (20%) + Intervention Justification (30%) — 2 tiêu chí này quyết định hướng toàn bộ giải pháp, phải chốt trước khi làm Solution Concept
@@ -295,10 +320,9 @@ Dựa trên thông tin đã cho + điều kiện vận hành ở Việt Nam/th�
 
 ## 8. Việc cần hỏi BTC / HLBVN (chưa rõ)
 
-- Deadline chính xác để "confirm participation + track" là ngày nào?
-- Có dataset mô phỏng thật để tải về không, hay chỉ dựa vào Exhibit 1 & 2 trong case để tự giả định? (thư BTC nhắc "simulated dataset and column definitions" — có thể có file riêng chưa được cung cấp, cần hỏi)
-- Timeline Strategy Round (12-17/10) có còn đúng không, hay đã đổi
-- Vertical/horizontal logo và brand assets file gốc lấy ở đâu (không có trong case PDF này)
+- Có dataset mô phỏng thật để tải về không, hay chỉ dựa vào Exhibit 1 & 2 trong case để tự giả định? (thư BTC nhắc "simulated dataset and column definitions" — có thể có file riêng chưa được cung cấp, cần hỏi) --> Câu trả lời là KHÔNG CÓ Ở VÒNG IDEATION
+- Timeline Strategy Round (12-17/10) có còn đúng không, hay đã đổi --> ĐÚNG
+- Vertical/horizontal logo và brand assets file gốc lấy ở đâu (không có trong case PDF này) --> KHÔNG CẦN QUAN TÂM
 
 ---
 
@@ -323,3 +347,11 @@ Dựa trên thông tin đã cho + điều kiện vận hành ở Việt Nam/th�
 ### Sau họp
 - Cập nhật mục 0 (Trạng thái hiện tại) với kết quả họp
 - Nếu có phân công cụ thể, ghi lại ở đây hoặc trong daily note ngày họp
+
+---
+
+## 10. Research 30/09 (linked notes)
+
+- [[underwriting-process-analysis]] - quy trình thủ công 380,000 VND / 1.8–4.6 ngày, chi phí, tổn thất tiềm năng, build-on-existing vs. new (khuyến nghị hybrid)
+- [[solution-usp-research]] - lỗ hổng của giải pháp hiện tại + các USP đề xuất
+- Nhật ký ngày: [[2026-09-30]]
