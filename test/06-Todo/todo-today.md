@@ -1,26 +1,37 @@
 ---
 type: todo
 scope: today
-date: 2026-09-30
+date: 2026-10-01
 tags: [todo, today]
 ---
 
-# Todo - Today (2026-09-30)
+# Todo - Today (2026-10-01)
 
 Rule: tasks are added here **only after Khanh confirms them**. Proposed tasks stay in chat until then.
-Zoom out: [[todo-this-week]] · [[todo-this-month]]
+Zoom out: [[todo-this-week]] · [[todo-this-month]] · Yesterday's list: `Archive/todo-2026-09-30.md`
 
 Each area lists the notes/folders that hold its tasks, so nothing gets lost.
 
-## Business Challenge 2026
-Source notes: [[business-challenge-2026]] · [[solution-usp-research]] · [[underwriting-process-analysis]]
-- [x] Đọc hết tài liệu về cuộc thi (case study, quy định Ideation Round, rubric, ghi chú trong vault) - [[business-challenge-2026]]
-- [x] Đưa ra giải pháp tốt nhất, có nghiên cứu hậu thuẫn nhất, kèm nguồn - [[final-solution]] *(bản nháp, chờ bạn duyệt)*
-- [x] Viết lại giải pháp bằng ngôn ngữ đơn giản nhất: luồng đầu-cuối, cách hoạt động, đối chiếu từng tiêu chí ban tổ chức - [[final-solution]]
+## Business Challenge 2026 (quan trọng nhất - làm đầu ngày)
+Source notes: [[business-challenge-2026]] · [[final-solution]] · [[solution-usp-research]] · [[underwriting-process-analysis]]
+- [ ] **11:30-14:30** - Research thêm, chốt solution và chuẩn bị pitch cho team. Đọc buổi sáng theo thứ tự:
+  1. [[final-solution]] - bản giải pháp PayFlow Line: luồng end-to-end, đối chiếu rubric, bằng chứng và giới hạn
+  2. [[solution-usp-research]] - lỗ hổng của giải pháp hiện tại + các USP ứng viên (A/B/C)
+  3. [[underwriting-process-analysis]] - quy trình thủ công 380,000 VND / 1.8-4.6 ngày, chi phí, hybrid hay làm mới
+  4. [[business-challenge-2026]] - case, rubric (mục 4.10), timeline; hạn nộp Ideation **04/10 20:00 GMT+7**
+  - **Họp pitch với team lúc 22:30 tối nay** - phải chốt xong trước 22:15
+  - Còn mở trong các ghi chú trên: chốt USP chính; hỏi BTC số liệu chi phí/thời gian theo bước, tỷ lệ duyệt, tỷ lệ bỏ giỏ; dựng mô hình unit economics; kiểm tra lại nguồn pháp lý
+
+## Career (CV, portfolio, apply)
+Source notes: [[about_me]] · [[lessons-learned]] · folder `05-Career/applications-interviews/`
+- [ ] **15:15-16:15** - Gửi file repomix của repo dự án mới cho Claude Code để generate file MD mô tả dự án *(tự làm trong Claude Code; chưa có list dự án)*
+- [ ] **16:15-17:45** - Update CV LaTeX hiện có bằng các dự án mới *(tự làm trong chat Claude Code, dùng file MD ở trên làm context)*
+- [ ] **18:15-20:30** - Update website portfolio: làm đẹp hơn, thêm dự án mới, thử tích hợp interaction design (JavaScript, SVG, CSS 3D transforms)
+- [ ] **21:15-22:15** - Apply các job đã lưu trên web *(phần chưa xong làm tiếp sau họp 22:30)*
 
 ## FinRecruit (FinTech Club)
-Source notes: [[finrecruit]] · [[finrecruit-epic-2]]
-- [ ] Hoàn thành Epic 2 (lên lịch phỏng vấn, chỉ frontend, mẫu mock/http-api) - [[finrecruit-epic-2]] *(chặn: cần repo + 2 file EPIC2_*.md)*
+Source notes: [[finrecruit]] · [[finrecruit-epic-2]] · [[epic2-summary]]
+- (none confirmed yet)
 
 ## Study
 Source folder: `02-Study/`
@@ -33,4 +44,4 @@ Source notes: [[activity-log]] · [[workout-progress]]
 ## Other
 - (none confirmed yet)
 
-Diary for today: [[2026-09-30]]
+Diary for today: [[2026-10-01]]

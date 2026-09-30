@@ -8,7 +8,7 @@ tags: [club, fintech-club, finrecruit, epic-2, todo]
 
 Up: [[finrecruit]] · Build convention: [[finrecruit-stack-and-conventions]] · UI: [[finrecruit-design-system]] · Depends on: [[finrecruit-epic-1]] (round lock produces the Round 2 pool)
 
-**Status: not started.**
+**Status: frontend done (2026-09-30).** Handoff for backend: [[epic2-summary]]. The scope, schema notes and questions below are from before the build.
 
 ## Scope (confirmed with the project owner)
 - Epic 2 only: the two-step interview scheduling system. Not Epics 1, 3, 4, 5.
@@ -24,8 +24,4 @@ Models in `src/app/(backend)/models/`, types in `src/app/(backend)/types/index.t
 - **`InterviewerAvailability`** - `slotId` (ref), `department`, `interviewerName` (string), `isHead` (boolean). No email, no role beyond `isHead`. The Figma form collects email and a three-way role (Executive Board / Department Head / Member). Reconcile: extend the model, or keep those fields mock-only for now.
 - **`DepartmentConfig`** - `department`, `generation`, `semester`, `interviewQuestions` (string[]), `isScoringEnabled`. Belongs to Epics 3/5; Epic 2 should not touch it.
 
-## Open questions / to-do
-- [ ] Decide: extend `InterviewerAvailability` (email, role) or keep mock-only
-- [ ] Update mock data shapes in `EPIC2_IMPLEMENTATION.md` to the flat `MasterInterviewSlot`
-- [ ] Bring `EPIC2_DESIGN_SPEC.md` and `EPIC2_IMPLEMENTATION.md` into this vault if wanted (they are outside it now)
-- [ ] Build `src/lib/interview-scheduling/` (five-file shape) then the EB screens and the two public links
+![[Pasted image 20260930200523.png]]
