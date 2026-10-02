@@ -6,6 +6,8 @@ tags: [competition, business-challenge-2026, underwriting, process, build-vs-buy
 
 # Manual underwriting process: what it is, where 380k VND and 1.8-4.6 days go, build vs. extend
 
+> ⚠️ **Superseded (02/10).** [[final-solution]] (V2) is now the source of truth for the competition and has absorbed/updated this file's 5-step breakdown (§1.1→§1 there) and the channel-gap note (§1b→§1.3 there), with corrected numbers. Keep this file only for the research trail and the step-level citations below.
+
 Parent: [[business-challenge-2026]] · Solution side: [[solution-usp-research]] · Diary: [[2026-09-30]]
 
 > **Evidence labels.** **[CASE]** = stated in the HLBVN case ([[business-challenge-2026]] §4.5, §4.8). **[PUBLIC]** = from public sources listed at the bottom. **[ASSUMPTION]** = my decomposition, *not* in the case - the case gives only the totals (380,000 VND, 1.8-4.6 working days), never the breakdown. State these as assumptions on the infographic.
@@ -30,6 +32,20 @@ Parent: [[business-challenge-2026]] · Solution side: [[solution-usp-research]] 
 Time column adds to exactly 1.8 (all minima) and 4.6 (all maxima); cost column adds to 380,000. The split itself is a guess: **validate by asking BTC/HLBVN for a step-level breakdown** (add to [[business-challenge-2026]] §8 list).
 
 Key structural point [CASE]: the cost is **fixed per application, whatever the loan size** (1.6M-90.1M VND).
+
+### 1b. Application channel — case does NOT specify it [open gap, not an oversight]
+
+[CASE §4.5]: "Khách hàng VN mua sắm qua cửa hàng vật lý, e-commerce, merchant app... Tín dụng hiện được cấp qua quy trình thiết kế cho vay tại chi nhánh (branch lending). Khách vay qua merchant/partner platform bị **redirect sang quy trình riêng**: nộp giấy tờ (bản cứng/scan) → xác minh → credit officer review đối chiếu credit bureau → quyết định sau vài ngày."
+
+That is all the case gives. It names three purchase channels (physical store, e-commerce, merchant app) and says the customer gets **"redirected"** to a separate flow with "hard copy/scan" documents - implying *some* digital path exists, but never says whether that's a branch visit, a separate web form, a QR code at the merchant counter, or an email attachment. **The case does not say.**
+
+[ASSUMPTION - do not present as case fact] Team's working assumption borrows from the typical Vietnamese unsecured-loan channel [PUBLIC, §1 above]: ID + income proof (payslips/bank statements 3-6mo; freelancers/business owners submit an income certificate) submitted to the bank, which asks for anything missing, verifies by phone, checks CIC, then decides. This is only a plausibility reference for "what Vietnamese retail lending usually looks like" - it is **not** HLBVN's actual channel, which the case never describes.
+
+**Why this gap is useful, not a problem.** The word "redirect" is itself evidence for the bottleneck in §4.5: whatever the channel is, it pulls the customer *out of* the purchase flow into a separate one - that interruption is plausibly part of why customers abandon at checkout. For the rubric (Solution Concept 35% - "state every assumption"), the honest answer if asked is:
+
+> "The case doesn't specify the channel - only that the customer is redirected to a separate flow with hard-copy/scan documents. We treat that redirect itself as a journey interruption, and PayFlow Line is designed to remove it: limit lookup and repayment happen inside the existing purchase/checkout flow, without sending the customer anywhere else."
+
+No need to invent channel details (branch vs. app vs. email) - the consequence (interruption → abandonment) is what matters for the pitch, and it's defensible without guessing the mechanism.
 
 ## 2. What that costs in money (worked from case numbers)
 

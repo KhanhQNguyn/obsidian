@@ -6,6 +6,8 @@ tags: [competition, business-challenge-2026, solution, usp]
 
 # Solution stress-test & USP research (30/09)
 
+> ⚠️ **Superseded (02/10).** [[final-solution]] (V2) is now the source of truth for the competition. The single-USP decision (01/10) and the full V2 architecture replace the multi-USP options below — keep this file only as the research trail for where the USP A idea and the gap analysis (§1) originally came from.
+
 Parent: [[business-challenge-2026]] · Process analysis: [[underwriting-process-analysis]] · Diary: [[2026-09-30]]. Baseline solution = pre-computed cash-flow credit line + income-linked repayment.
 
 ## 1. Gaps in the current solution (judges will find these)
