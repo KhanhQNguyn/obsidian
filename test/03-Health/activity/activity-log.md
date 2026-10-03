@@ -7,6 +7,9 @@ tags: [health, activity, gym, sport]
 
 One file for every workout/sport day, newest first. Lift numbers across weeks live in [[workout-progress]]. Days with no entry mean "no data", not "did nothing".
 
+## 2026-10-03
+- **Gym:** did not go. Note: hôm qua (02/10) có tập ngực (theo lời kể) nhưng chưa có số liệu cụ thể — chưa xác nhận, xem [[2026-10-02]] nếu có.
+
 ## 2026-09-29
 - **Gym:** did not go (noted 30 Sep; the [[2026-09-29]] daily note still lists a planned 20:30 light gym session).
 - **Badminton:** 1h30m, session at 14:00 (start time from [[2026-09-29]]).

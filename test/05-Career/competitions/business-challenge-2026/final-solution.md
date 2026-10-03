@@ -12,6 +12,8 @@ status: SOURCE OF TRUTH for the competition — supersedes all earlier drafts
 > Nền tảng case: [[business-challenge-2026]] · Nhật ký liên quan: [[2026-09-30]] · [[2026-10-01]]
 >
 > **Còn thiếu để nộp bài:** bản này là tiếng Việt; đề yêu cầu nộp **tiếng Anh** — cần dịch trước khi lên infographic (xem việc cần làm ở mục 10 gốc + mục "Còn thiếu" cuối file này).
+>
+> **⚠️ 03/10/2026:** [[knowledge-base]] (`knowledge-base.md`, cùng folder) vừa được thêm — đây là tài liệu sâu nhất, **nguồn chân lý mới nhất**, dùng cho Q&A/NotebookLM. File này (`final-solution.md`) vẫn là bản tóm tắt cho infographic, nhưng nếu có mâu thuẫn số liệu giữa 2 file, **ưu tiên `knowledge-base.md`**. Một mâu thuẫn đã phát hiện và sửa: trần affordability 60% (mục 3.6) từng ghi nhầm là "chính sách đã xác nhận của HLBVN" — đã kiểm tra, không có nguồn công khai nào xác nhận, nay ghi lại đúng là giả định của đội.
 
 ---
 
@@ -199,9 +201,9 @@ Vì sao chia tầng thay vì chọn một cơ chế duy nhất: Tier 2 (trích t
 
 ## 3.6. Kiểm soát khả năng chi trả và chống vay chồng
 
-> ⚠️ **SỬA:** Affordability cap trước đây để trống. Đã chốt số cụ thể, neo theo chính sách hiện có của HLBVN.
+> ⚠️ **SỬA (03/10, theo `knowledge-base.md` §9.3 — nguồn mới nhất):** Đã kiểm tra trực tiếp website công khai của HLBVN (trang Unsecured Personal Loan/Vay Tiêu Dùng) — chỉ công bố thu nhập tối thiểu 10 triệu/tháng, hạn mức 30–500 triệu, lãi suất "từ 15%/năm", **KHÔNG công bố tỷ lệ trả nợ tối đa nào**. Con số 60% ở bản trước ghi nhầm là "chính sách hiện có của HLBVN" — **không có nguồn nào xác nhận điều này**. Cả 60% và 30% dưới đây đều là **giả định/đề xuất của đội**, không phải chính sách đã xác nhận.
 
-- Nhóm salaried (có/không CIC): khoản trả nợ mỗi kỳ không vượt quá 60% thu nhập — neo theo đúng mức trần đã áp dụng trong chính sách vay tín chấp hiện có của HLBVN.
+- Nhóm salaried (có/không CIC): khoản trả nợ mỗi kỳ không vượt quá 60% thu nhập — [Giả định — đề xuất của đội, không phải chính sách đã xác nhận của HLBVN].
 - Nhóm thu nhập biến động (gig/merchant/first-time): mức trần thấp hơn, đề xuất 30% thu nhập P25 mỗi kỳ — [Giả định, cần đội chốt lại số cuối].
 
 > ⚠️ **SỬA:** Chống vay chồng: V1 nói phải chờ Open API 2027 mới phát hiện được. Đã sửa — AI đọc nội dung chuyển khoản (2.2) phát hiện được một phần ngay từ bây giờ.
@@ -253,7 +255,7 @@ Dải giả định A1–A6 đề xuất cho infographic (mỗi con số giả �
 - A3 — Bộ tham số kinh tế (lãi suất, chi phí vốn, chi phí rủi ro, tỷ lệ tự động hóa) ở mục 5.1 là giả định minh họa, neo vào benchmark thị trường VN công khai.
 - A4 — Giả định HLBVN có thể thiết lập hợp tác chia sẻ dữ liệu với ví điện tử/nền tảng giao hàng, có đồng ý rõ ràng của khách, theo khung Open API và sandbox hiện hành.
 - A5 — Giả định khách gig worker đồng ý đổi payout destination sang HLB để mở bậc hạn mức cao hơn (3.4a) — không phải điều chắc chắn xảy ra.
-- A6 — Trần affordability 30% cho nhóm thu nhập biến động là đề xuất minh họa, cần đội chốt số cuối.
+- A6 — Trần affordability 60% (salaried) và 30% (thu nhập biến động) đều là đề xuất minh họa của đội, **không phải chính sách đã xác nhận của HLBVN** (đã kiểm tra trực tiếp website HLBVN, không công bố tỷ lệ trả nợ tối đa — xem `knowledge-base.md` §9.3); 30% cần đội chốt số cuối.
 
 # 5. KPI và hiệu quả kinh tế
 
@@ -400,7 +402,7 @@ Không xây integration thật, không yêu cầu credentials/API access thật 
 
 - Chạy lại portfolio P&L (5.2) ở đúng lãi suất 22% theo bộ tham số thống nhất (5.1) — hiện vẫn đang mang số cũ tính ở 20%.
 - Xác nhận lại phương pháp tính hai con số kiểm tra sức chịu đựng (65,8tr và 3,7tr, mục 5.3).
-- Chốt số cuối cho affordability cap nhóm thu nhập biến động (đề xuất 30%, mục 3.6/A6).
+- Chốt số cuối cho affordability cap nhóm thu nhập biến động (đề xuất 30%, mục 3.6/A6) — và khi trình bày, nói rõ cả 60%/30% là đề xuất của đội, không phải chính sách đã xác nhận của HLBVN (đã kiểm tra, không tìm thấy nguồn công khai).
 - Kiểm tra lại Thông tư 16/2020 có còn hiệu lực không (8).
 - Tìm lại/bổ sung link thật cho các nguồn: Thông tư 12/2024, 06/2023, 39/2016 Điều 27, Nghị định 94/2025, Thông tư 64/2024, số liệu GSO 2025, trang lãi suất HLBVN — bắt buộc vì đề yêu cầu trích dẫn APA 7th Edition.
 - Kiểm tra lại đề gốc xem Data & Assumptions có phải tiêu chí 10% riêng không (mục 4).
